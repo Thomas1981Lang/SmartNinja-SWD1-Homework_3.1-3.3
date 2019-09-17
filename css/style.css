@@ -918,6 +918,8 @@ h2 {
 
     .login_footer {
         width: 100%;
+        margin-bottom: 2rem;
+        padding: 0 40px;
     }
 
     .login-box {
