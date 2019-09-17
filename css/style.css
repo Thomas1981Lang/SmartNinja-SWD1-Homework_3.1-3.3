@@ -14,7 +14,6 @@
 */
 
 
-
 /*----------------------------------------*/
 /*                                        */
 /*           Normalize                    */
@@ -393,17 +392,15 @@ body {
     font-family: Arial, sans-serif;
     font-size: 1.3rem;
     min-height: 100vh;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
 }
 
-/*----------------------------------------*/
-/*                                        */
-/*           COLORS                       */
-/*                                        */
-/*----------------------------------------*/
-
+.frow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
 /*----------------------------------------*/
 /*                                        */
@@ -435,12 +432,23 @@ input {
 }
 
 .btn:hover {
-    background-image: linear-gradient(top,#f8f8f8,#f1f1f1);
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-image: linear-gradient(top, #f8f8f8, #f1f1f1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     background-color: #f8f8f8;
     border: 1px solid #c6c6c6;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     color: #222;
+}
+
+.btn-login {
+    color: #fff;
+    border: 1px solid #4285f4;
+    font-weight: bold;
+    background: #4285f4;
+    display: inline-block;
+    line-height: 28px;
+    padding: 0 12px;
+    border-radius: 2px;
 }
 
 /*----------------------------------------*/
@@ -454,7 +462,11 @@ input {
     flex-direction: column;
     align-items: center;
     width: auto;
-    margin-top: 89px;
+    margin-top: 44px;
+}
+
+.header {
+    margin-top: 15px;
 }
 
 .header,
@@ -467,14 +479,46 @@ input {
 }
 
 
-
 /*----------------------------------------*/
 /*           HEADER                       */
 /*----------------------------------------*/
 
+.header {
+    display: flex;
+    justify-content: space-between;
+}
 
+.header_left {
 
+}
 
+.header_right {
+    margin: 0 30px;
+}
+
+.header_link {
+    margin-right: 15px;
+}
+
+.header_link:hover {
+    opacity: .85;
+    text-decoration: underline;
+}
+
+.header_link a {
+    color: rgba(0,0,0,0.87);
+}
+
+.google_apps {
+    background-image: url(../img/apps.png);
+    height: 16px;
+    width: 16px;
+    opacity: .7;
+}
+
+.google_apps:hover {
+    opacity: 1;
+}
 
 /*----------------------------------------*/
 /*           LOGO                         */
@@ -485,17 +529,19 @@ input {
 }
 
 .logo {
+    position: relative;
     z-index: 9999;
     width: 391px;
     height: 220px;
     opacity: 1;
-    transition: width 2s, height 2s, opacity 1s linear 2s;
+    transition: width 2s, height 2s, opacity 1s;
 }
 
 .google_logo:hover .logo {
-    opacity:1;
+    opacity: 0;
     width: 880px;
     height: 495px;
+    transition: width 2s, height 2s, opacity 3s linear 2.2s;
 }
 
 .logo_video {
@@ -506,11 +552,11 @@ input {
     width: 391px;
     height: 220px;
     opacity: 0;
-    transition: width 2s, height 2s, opacity 1s linear 2s;
+    transition: width 2s, height 2s, opacity 2s linear 0s;
 }
 
 .google_logo:hover .logo_video {
-    opacity: 0.3;
+    opacity: 1;
     width: 880px;
     height: 495px;
 }
@@ -528,6 +574,7 @@ input {
     background-size: contain;
     background-repeat: no-repeat;
     margin: 12px 5px;
+    cursor: pointer;
 }
 
 .logo_search {
@@ -575,7 +622,7 @@ input {
 
 
 .main_search_input::after {
-    content:'';
+    content: '';
     position: absolute;
     top: 0;
     right: 0px;
@@ -586,8 +633,8 @@ input {
     background-position: center;
     cursor-event: auto;
     cursor: pointer;
-    width: 20px/* width of the image */;
-    height: 20px/* height of the image */;
+    width: 20px /* width of the image */;
+    height: 20px /* height of the image */;
     padding: 20px;
     display: block;
     /*margin:10px 5px 0 10px;*/
@@ -595,8 +642,8 @@ input {
 
 .main_search_input:hover,
 .main_search_input:focus {
-    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
-    border-color: rgba(223,225,229,0);
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    border-color: rgba(223, 225, 229, 0);
     outline: 0;
 }
 
@@ -623,7 +670,7 @@ input {
 
 .country_bar p {
     margin: 0;
-    color: rgba(0,0,0,.54);
+    color: rgba(0, 0, 0, .54);
 }
 
 .link_bar {
@@ -644,6 +691,7 @@ input {
 .bar_link:hover {
     text-decoration: underline;
 }
+
 /*----------------------------------------*/
 /*           HEADER MEDIA QUERY           */
 /*----------------------------------------*/

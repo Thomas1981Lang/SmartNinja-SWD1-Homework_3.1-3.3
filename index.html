@@ -7,14 +7,18 @@
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>Fake Google</title>
     <link rel="stylesheet" href="css/style.css">
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
 </head>
 <body>
-<header class="header">
+<header class="header frow">
     <div class="header_left">
 
     </div>
-    <div class="header_right">
-        <div class="desktop">
+    <div class="header_right frow">
+        <div class="desktop frow">
             <div class="header_link">
                 <a href="#">Gmail</a>
             </div>
@@ -22,13 +26,9 @@
                 <a href="#">Gmail</a>
             </div>
         </div>
-        <div class="google">
-            <div class="apps">
-
-            </div>
-            <div class="login">
-
-            </div>
+        <div class="google frow">
+            <a href="#" class="header_link google_apps"></a>
+            <a href="#" class="btn-login">Anmelden</a>
         </div>
     </div>
 </header>
@@ -36,7 +36,7 @@
     <div class="container">
         <div class="google_logo">
             <img alt="Google Logo - 94. Geburtstag von B. B. King" class="logo" src="img/bb-kings-94th-birthday-6492993740603392.4-vacta.gif" title="94. Geburtstag von B. B. King">
-            <iframe class="logo_video" src="https://www.youtube.com/embed/XtgUhrGLrI4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="logo_video" src="" frameborder="0" allow="autoplay;  encrypted-media; gyroscope; picture-in-picture" allowfullscreen mute=1></iframe>
             <div class="google_logo_icons">
                 <i class="logo_icons logo_search"></i>
                 <i class="logo_icons logo_share"></i>
@@ -69,6 +69,26 @@
         </div>
     </div>
 </footer>
+
+<script>
+    $(".google_logo").hover(function () {
+        console.log('Line 75: ' );
+        setTimeout(addSource, 1900);
+    }, function () {
+        console.log('Line 78, ' );
+        removeSource();
+    })
+
+
+    function addSource() {
+        $(".logo_video").attr("src", "https://www.youtube.com/embed/XtgUhrGLrI4?rel=0&autoplay=1");
+    }
+
+    function removeSource() {
+        $(".logo_video").attr("src", "");
+    }
+</script>
+
 </body>
 </html>
 
