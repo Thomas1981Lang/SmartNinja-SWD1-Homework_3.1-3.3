@@ -659,7 +659,7 @@ input {
     background: #f2f2f2;
     border-top: 1px solid #e4e4e4;
     line-height: 40px;
-    min-width: 980px;
+
 }
 
 .country_bar {
@@ -696,3 +696,56 @@ input {
 /*           HEADER MEDIA QUERY           */
 /*----------------------------------------*/
 
+@media (max-width: 1030px) {
+    .link_bar {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 970px) {
+    .google_logo_icons {
+        display: none;
+    }
+}
+
+@media (max-width: 880px) {
+
+    .google_logo:hover .logo {
+        opacity: 0;
+        width: 391px;
+        height: 220px;
+        transition: opacity 3s;
+    }
+
+    .google_logo:hover .logo_video {
+        opacity: 1;
+        width: 391px;
+        height: 220px;
+    }
+}
+
+@media (max-width: 610px) {
+    .link_bar_right,
+    .link_bar_left {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin:0;
+    }
+
+    .bar_link {
+        padding-left: 27px;
+    }
+
+    .main_search{
+        width: 100%;
+        max-width: 95%;
+    }
+
+    .main_search_input {
+        width: 100%;
+    }
+}
