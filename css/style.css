@@ -390,18 +390,9 @@ html {
 }
 
 body {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 1.2rem;
+    font-family: Arial, sans-serif;
+    font-size: 1.3rem;
 }
-
-.container {
-    width: 98%;
-    max-width: 102.4rem;
-    margin: 0 auto;
-}
-
-
-
 
 /*----------------------------------------*/
 /*                                        */
@@ -416,12 +407,12 @@ body {
 /*                                        */
 /*----------------------------------------*/
 
+input {
+    font-size: 1.6rem;
+}
 
 
 
-/*----------------------------------------*/
-/*           HEADER MEDIA QUERY           */
-/*----------------------------------------*/
 
 
 /*----------------------------------------*/
@@ -430,19 +421,138 @@ body {
 /*                                        */
 /*----------------------------------------*/
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    margin-top: 89px;
+}
+/*----------------------------------------*/
+/*           LOGO                         */
+/*----------------------------------------*/
+
+.google_logo {
+    position: relative;
+}
+
+.logo {
+    z-index: 9999;
+    width: 391px;
+    height: 220px;
+    opacity: 1;
+    transition: width 2s, height 2s, opacity 1s linear 2s;
+}
+
+.google_logo:hover .logo {
+    opacity:1;
+    width: 880px;
+    height: 495px;
+}
+
+.logo_video {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 391px;
+    height: 220px;
+    opacity: 0;
+    transition: width 2s, height 2s, opacity 1s linear 2s;
+}
+
+.google_logo:hover .logo_video {
+    opacity: 0.3;
+    width: 880px;
+    height: 495px;
+}
+
+.google_logo_icons {
+    position: absolute;
+    top: 0;
+    right: -32px;
+}
+
+.logo_icons {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 12px 5px;
+}
+
+.logo_search {
+    background-image: url(../img/theme-search.png);
+}
+
+.logo_share {
+    background-image: url(../img/theme-share.png);
+}
 
 
 /*----------------------------------------*/
-/*           ASIDE NAV                    */
+/*           SEARCHFIELD                  */
 /*----------------------------------------*/
 
+.main_search {
+    margin-top: 10px;
+}
+
+.main_search_input {
+    padding: 12px 30px 12px 40px;
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    border-radius: 24px;
+    transition: box-shadow .1s, border-color .1s;
+    width: 567px;
+    position: relative;
+    display: inline-block;
+    cursor: text;
+
+}
+
+.main_search_input::before {
+    box-sizing: content-box;
+    content: url('data:image/svg+xml; utf8, <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>');
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    ackground-color: red;
+}
 
 
+.main_search_input::after {
+    content:'';
+    position: absolute;
+    top: 0;
+    right: 0px;
+    z-index: 4;
+    background-image: url(../img/googlemic_color_24dp.png);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor-event: auto;
+    cursor: pointer;
+    width: 20px/* width of the image */;
+    height: 20px/* height of the image */;
+    padding: 20px;
+    display: block;
+    /*margin:10px 5px 0 10px;*/
+}
+
+.main_search_input:hover,
+.main_search_input:focus {
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+    border-color: rgba(223,225,229,0);
+    outline: 0;
+}
+
 /*----------------------------------------*/
-/*           MAIN COLUMN                  */
+/*           HEADER MEDIA QUERY           */
 /*----------------------------------------*/
 
-
-/*----------------------------------------*/
-/*           MAIN CONTENT HEADER          */
-/*----------------------------------------*/
